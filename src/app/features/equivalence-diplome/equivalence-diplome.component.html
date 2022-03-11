@@ -1,0 +1,198 @@
+<!-- Hero Start -->
+<section class="bg-half  d-table w-100" id="home" style="background: url('assets/images/course/bg07.png') center center;">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="page-next-level">
+                    <h4 class="title text-white title-dark"> Contactez pour besoin d'équivalence de diplôme  </h4>
+                    <div class="page-next">
+                        <nav aria-label="breadcrumb" class="d-inline-block">
+                            <ul class="breadcrumb bg-white rounded shadow mb-0">
+                                <li class="breadcrumb-item"><a routerLink="/index">Africaccess</a></li>
+                                <li class="breadcrumb-item"><a href="#">Services</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Equivalence de diplôme</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<!-- Job apply form Start -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-7">
+                <div class="card custom-form border-0">
+                    <div class="card-body">
+                        <form [formGroup]="applyForm"  (ngSubmit)="submit()" class="rounded shadow p-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label> Nom de naissance :<span class="text-danger">*</span></label>
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input name="name" id="nom" type="text" formControlName="nom" class="form-control pl-5" placeholder="Votre nom de naissance :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('nom')?.dirty) || (applyForm.get('nom')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('nom')?.hasError('required')" class="text-danger">
+                                           Le nom de naissance est requis
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Prénom<span class="text-danger">*</span></label>
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input name="text" formControlName="prenom" id="prenom" type="text" class="form-control pl-5"
+                                               placeholder="Prénom :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('prenom')?.dirty) || (applyForm.get('prenom')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('prenom')?.hasError('required')" class="text-danger">
+                                            Le prénom est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Date et lieu de naissance :</label>
+                                        <i-feather name="book" class="fea icon-sm icons"></i-feather>
+                                        <input type="date" name="subject" id="subject" formControlName="nom" class="form-control pl-5" placeholder="date et lieu de naissance :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('nom')?.dirty) || (applyForm.get('nom')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('nom')?.hasError('required')" class="text-danger">
+                                            La date et lieu de naissance sont requis
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Télephone<span class="text-danger">*</span></label>
+                                        <i-feather name="phone" class="fea icon-sm icons"></i-feather>
+                                        <input name="text" formControlName="telephone" id="number" type="number" class="form-control pl-5"
+                                               placeholder="telephone :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('telephone')?.dirty) || (applyForm.get('telephone')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('telephone')?.hasError('required')" class="text-danger">
+                                            Le télephone est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                <!--end col-->
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Votre adresse email :<span class="text-danger">*</span></label>
+                                        <i-feather name="mail" class="fea icon-sm icons"></i-feather>
+                                        <input name="email" id="email" type="email" formControlName="email" class="form-control pl-5" placeholder="email :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('email')?.dirty) || (applyForm.get('email')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('email')?.hasError('required')" class="text-danger">
+                                            L'adresse email est requise
+                                        </small>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Pays :<span class="text-danger">*</span></label>
+                                        <i-feather name="map" class="fea icon-sm icons"></i-feather>
+                                        <input name="name" id="name" type="text" formControlName="paysEqivalence" class="form-control pl-5" placeholder="pays de l'équivalence">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('paysEqivalence')?.dirty) || (applyForm.get('paysEqivalence')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('paysEqivalence')?.hasError('required')" class="text-danger">
+                                            Le pays de l'équivalence est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                <!--end col-->
+
+                                <div class="col-md-12">
+                                    <div class="form-group position-relative">
+                                        <label>Message :</label>
+                                        <i-feather name="message-circle" class="fea icon-sm icons"></i-feather>
+                                        <textarea name="comments" formControlName="lettre" id="comments" rows="4" class="form-control pl-5"
+                                                  placeholder="Décrivez votre besoin ici :"></textarea>
+                                    </div>
+                                </div>
+
+                                <!--end col-->
+<!--
+                                <div class="col-md-12">
+                                    <div class="form-group position-relative">
+                                        <label>Téléversez votre CV :</label>
+                                        <input type="file" formControlName="cvURL" class="form-control-file" id="fileupload">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('cvURL')?.dirty) || (applyForm.get('cvURL')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('cvURL')?.hasError('required')" class="text-danger">
+                                            Le CV est requis
+                                        </small>
+                                    </div>
+                                </div>
+-->
+                                <!--end col-->
+                                <div *ngIf="false" class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">J'accepte <a href="#"
+                                                                                                                class="text-primary">les Termes et Conditions</a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            </div>
+                            <!--end row-->
+                            <div class="row" *ngIf="!send">
+                                <div class="col-sm-12">
+                                    <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Soumettre">
+                                </div>
+                                <!--end col-->
+                            </div>
+                            <!--end row-->
+
+                            <div class="col-12 mb-0 pb-0" *ngIf="send">
+                                <div class="row justify-content-center">
+                                    <img src="assets/images/loading.gif" class="img-fluid" width="150" height="150" alt="loading">
+                                </div>
+                            </div>
+                        </form>
+                        <!--end form-->
+                    </div>
+                </div>
+                <!--end custom-form-->
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- Job apply form End -->
+
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-soft-primary back-to-top" id="back-to-top"
+   [ngxScrollTo]="'#home'">
+    <i-feather name="arrow-up" class="icons"></i-feather>
+</a>
+<!-- Back to top -->

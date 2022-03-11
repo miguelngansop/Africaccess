@@ -1,0 +1,145 @@
+<!-- Start Contact -->
+<section class="section pt-5 mt-4" id="home">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 p-0">
+        <div class="card map border-0">
+          <div class="card-body p-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.231873318617!2d2.3033399155541043!3d48.83471567928517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6704704af9eab%3A0x2c01a8e596f3d085!2s25%20Rue%20de%20Vouill%C3%A9%2C%2075015%20Paris%2C%20France!5e0!3m2!1sfr!2scm!4v1628544468868!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+  </div>
+  <!--end container-->
+
+  <div class="container mt-100 mt-60">
+    <div class="row align-items-center">
+      <div class="col-lg-5 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
+        <div class="card custom-form rounded shadow border-0">
+          <div class="card-body">
+            <div id="message"></div>
+            <form method="post"  [formGroup]="contactForm" (ngSubmit)="submit()" name="contact-form" id="contact-form">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group position-relative">
+                    <label>Votre nom <span class="text-danger">*</span></label>
+                    <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                    <input name="name" id="name" type="text" class="form-control pl-5" formControlName="name" placeholder="Nom :">
+                  </div>
+                  <div *ngIf="(contactForm.invalid && contactForm.get('name')?.dirty) || (contactForm.get('name')?.touched || submitted)" >
+                    <small *ngIf="contactForm.get('name')?.hasError('required')" class="text-danger">
+                      Le nom est requis
+                    </small>
+                  </div>
+                </div>
+                <!--end col-->
+                <div class="col-lg-6">
+                  <div class="form-group position-relative">
+                    <label>Votre adresse email <span class="text-danger">*</span></label>
+                    <i-feather name="mail" class="fea icon-sm icons"></i-feather>
+                    <input name="email" id="email" type="email" class="form-control pl-5" formControlName="email" placeholder="adresse email :">
+                  </div>
+                  <div *ngIf="(contactForm.invalid && contactForm.get('email')?.dirty) || (contactForm.get('email')?.touched || submitted)" >
+                    <small *ngIf="contactForm.get('email')?.hasError('required')" class="text-danger">
+                      L'adresse email est requise
+                    </small>
+                  </div>
+                </div>
+                <!--end col-->
+                <div class="col-lg-12">
+                  <div class="form-group position-relative">
+                    <label>Message</label>
+                    <i-feather name="message-circle" class="fea icon-sm icons"></i-feather>
+                    <textarea name="comments" id="comments" formControlName="message" rows="4" class="form-control pl-5"
+                      placeholder="Votre message :"></textarea>
+                  </div>
+                  <div *ngIf="(contactForm.invalid && contactForm.get('message')?.dirty) || (contactForm.get('message')?.touched || submitted)" >
+                    <small *ngIf="contactForm.get('message')?.hasError('required')" class="text-danger">
+                      Le message est requis
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <!--end row-->
+              <div class="row">
+                <div class="col-sm-12 text-center" *ngIf="!send">
+                  <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary btn-block"
+                    value="Envoyer le Message">
+                  <div id="simple-msg"></div>
+                </div>
+                <!--end col-->
+
+                <div class="col-12 mb-0 pb-0" *ngIf="send">
+                  <div class="row justify-content-center">
+                    <img src="assets/images/loading.gif" class="img-fluid" width="150" height="150" alt="loading">
+                  </div>
+                </div>
+
+              </div>
+              <!--end row-->
+            </form>
+            <!--end form-->
+          </div>
+        </div>
+        <!--end custom-form-->
+      </div>
+      <!--end col-->
+
+      <div class="col-lg-7 col-md-6 order-1 order-md-2">
+        <div class="title-heading ml-lg-4">
+          <h4 class="mb-4">Contactez-nous</h4>
+          <p class="text-muted"> Dites nous en quoi nous pouvons vous aider ou laissez tout simplement une suggestion. <span class="text-primary font-weight-bold">Le support Africacces</span>
+            est toujours disponible pour vous repondre dans un delai raisonable.</p>
+          <div class="media contact-detail align-items-center mt-3">
+            <div class="icon">
+              <i-feather name="mail" class="fea icon-m-md text-dark mr-3"></i-feather>
+            </div>
+            <div class="media-body content">
+              <h4 class="title font-weight-bold mb-0">Email</h4>
+              <a href="mailto:contact@africaccess.fr" class="text-primary">contact@africaccess.fr</a>
+            </div>
+          </div>
+
+          <div class="media contact-detail align-items-center mt-3">
+            <div class="icon">
+              <i-feather name="phone" class="fea icon-m-md text-dark mr-3"></i-feather>
+            </div>
+            <div class="media-body content">
+              <h4 class="title font-weight-bold mb-0">Téléphones</h4>
+              <a href="tel:+33 6 74 18 39 51" class="text-primary">+33 6 74 18 39 51</a><br>
+              <a href="tel:+33 6 74 18 39 51" class="text-primary">+237 6 90 75 53 47</a><br>
+              <a href="tel:+33 6 74 18 39 51" class="text-primary">‎+237 6 79 28 50 02</a>
+            </div>
+          </div>
+
+          <div class="media contact-detail align-items-center mt-3">
+            <div class="icon">
+              <i-feather name="map-pin" class="fea icon-m-md text-dark mr-3"></i-feather>
+            </div>
+            <div class="media-body content">
+              <h4 class="title font-weight-bold mb-0">Localisation</h4>
+              <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"
+                class="video-play-icon text-primary">Voir sur Google map</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end col-->
+    </div>
+    <!--end row-->
+  </div>
+  <!--end container-->
+</section>
+<!--end section-->
+<!-- End contact -->
+
+
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-soft-primary back-to-top" id="back-to-top"
+  [ngxScrollTo]="'#home'">
+  <i-feather name="arrow-up" class="icons"></i-feather>
+</a>
+<!-- Back to top -->

@@ -1,0 +1,412 @@
+<!-- Hero Start -->
+<section class="bg-profile d-table w-100 bg-primary" id="home"
+         style="background: url('assets/images/account/bg.png') center center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card public-profile border-0 rounded shadow" style="z-index: 1;">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-lg-2 col-md-3 text-md-left text-center">
+                                <img src="assets/images/userdefaut.png"
+                                     class="avatar avatar-large rounded-circle shadow d-block mx-auto" alt="">
+                            </div>
+                            <!--end col-->
+
+                            <div class="col-lg-10 col-md-9">
+                                <div class="row align-items-end">
+                                    <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
+                                        <h3 class="title mb-0">{{user?.name }} </h3>
+                                        <small class="text-muted h6 mr-2">{{user?.email}}</small>
+                                    </div>
+                                    <!--end col-->
+<!--
+                                    <div class="col-md-5 text-md-right text-center">
+                                        <ul class="list-unstyled social-icon social mb-0 mt-4">
+                                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" placement="bottom"
+                                                                            ngbTooltip="Add Friend">
+                                                <i-feather name="user-plus" class="fea icon-sm fea-social"></i-feather>
+                                            </a></li>
+                                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded" placement="bottom"
+                                                                                 ngbTooltip="Messages">
+                                                <i-feather name="message-circle" class="fea icon-sm fea-social"></i-feather>
+                                            </a></li>
+                                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded" placement="bottom"
+                                                                                 ngbTooltip="Notifications">
+                                                <i-feather name="bell" class="fea icon-sm fea-social"></i-feather>
+                                            </a></li>
+                                            <li class="list-inline-item ml-1"><a routerLink="/account-setting" class="rounded" placement="bottom"
+                                                                                 ngbTooltip="Settings">
+                                                <i-feather name="tool" class="fea icon-sm fea-social"></i-feather>
+                                            </a></li>
+                                        </ul>
+                                        &lt;!&ndash;end icon&ndash;&gt;
+                                    </div>
+-->
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--ed container-->
+</section>
+<!--end section-->
+<!-- Hero End -->
+
+<!-- Profile Start -->
+<section class="section mt-60">
+    <div class="container mt-lg-3">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
+                <div class="sidebar sticky-bar p-4 rounded shadow">
+<!--
+                    <div class="widget">
+                        <h5 class="widget-title">Followers :</h5>
+                        <div class="row mt-4">
+                            <div class="col-6 text-center">
+                                <i-feather name="user-plus" class="fea icon-ex-md text-primary mb-1"></i-feather>
+                                <h5 class="mb-0">2588</h5>
+                                <p class="text-muted mb-0">Followers</p>
+                            </div>
+                            &lt;!&ndash;end col&ndash;&gt;
+
+                            <div class="col-6 text-center">
+                                <i-feather name="users" class="fea icon-ex-md text-primary mb-1"></i-feather>
+                                <h5 class="mb-0">454</h5>
+                                <p class="text-muted mb-0">Following</p>
+                            </div>
+                            &lt;!&ndash;end col&ndash;&gt;
+                        </div>
+                        &lt;!&ndash;end row&ndash;&gt;
+                    </div>
+-->
+
+                    <div class="widget mt-4 pt-2">
+                        <h5 class="widget-title">Mon espace entreprise</h5>
+<!--
+                        <div class="progress-box mt-4">
+                            <h6 class="title text-muted">Progress</h6>
+                            <div class="progress">
+                                <div class="progress-bar position-relative bg-primary" style="width:50%;">
+                                    <div class="progress-value d-block text-muted h6">24 / 48</div>
+                                </div>
+                            </div>
+                        </div>
+-->
+                        <!--end process box-->
+                    </div>
+
+                    <div class="widget">
+                        <div class="row">
+                            <div class="col-6 mt-4 pt-2" disabled>
+                                <a routerLink="#"  class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-dashboard"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Candidatures</h6>
+                                </a>
+                            </div>
+                            <!--end col-->
+
+<!--                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/#" class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-users-alt"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Members</h6>
+                                </a>
+                            </div>-->
+                            <!--end col-->
+
+                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/espace-personnel" class="accounts active rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-file"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Nouvelle offre </h6>
+                                </a>
+                            </div>
+                            <!--end col-->
+
+<!--                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="#" class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-envelope-star"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Messages</h6>
+                                </a>
+                            </div>-->
+                            <!--end col-->
+
+<!--                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/account-payments" class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-transaction"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Payments</h6>
+                                </a>
+                            </div>-->
+                            <!--end col-->
+
+<!--                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/account-setting" class="accounts active rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-setting"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Settings</h6>
+                                </a>
+                            </div>-->
+                            <!--end col-->
+
+<!--                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/auth-login-three" class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-sign-out-alt"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Logout</h6>
+                                </a>
+                            </div>-->
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+
+<!--
+                    <div class="widget mt-4 pt-2">
+                        <h5 class="widget-title">Follow me :</h5>
+                        <ul class="list-unstyled social-icon mb-0 mt-4">
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded">
+                                <i-feather name="facebook" class="fea icon-sm fea-social"></i-feather>
+                            </a></li>
+                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                <i-feather name="instagram" class="fea icon-sm fea-social"></i-feather>
+                            </a></li>
+                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                <i-feather name="twitter" class="fea icon-sm fea-social"></i-feather>
+                            </a></li>
+                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                <i-feather name="linkedin" class="fea icon-sm fea-social"></i-feather>
+                            </a></li>
+                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                <i-feather name="github" class="fea icon-sm fea-social"></i-feather>
+                            </a></li>
+                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                <i-feather name="youtube" class="fea icon-sm fea-social"></i-feather>
+                            </a></li>
+                            <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                <i-feather name="gitlab" class="fea icon-sm fea-social"></i-feather>
+                            </a></li>
+                        </ul>
+                        &lt;!&ndash;end icon&ndash;&gt;
+                    </div>
+-->
+                </div>
+            </div>
+            <!--end col-->
+
+            <div class="col-lg-8 col-12">
+                <div class="card border-0 rounded shadow">
+                    <div class="card-body">
+                        <h5 class="text-md-left text-center"> Soumettre une offre en alternance :</h5>
+
+                        <form [formGroup]="applyForm" (ngSubmit)="submit()">
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Intitulé du poste</label>
+                                        <i-feather name="edit-3" class="fea icon-sm icons"></i-feather>
+                                        <input required="" name="intitule" id="intitule" type="text" formControlName="intitule" class="form-control pl-5" placeholder="L’intitulé du poste :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('intitule')?.dirty) || (applyForm.get('intitule')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('intitule')?.hasError('required')" class="text-danger">
+                                            L'intitulé est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Niveau de qualification exigé</label>
+                                        <i-feather name="user-check" class="fea icon-sm icons"></i-feather>
+                                        <input required="" name="niveauQualification" id="niveauQualification" type="text" formControlName="niveauQualification" class="form-control pl-5" placeholder="Le niveau de qualification exigé :">
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Position de l’alternant dans l’organigramme,</label>
+                                        <i-feather name="edit" class="fea icon-sm icons"></i-feather>
+                                        <input required="" name="positionAlternant" id="positionAlternant" type="text" formControlName="positionAlternant" class="form-control pl-5" placeholder="La position de l’alternant dans l’organigramme, :">
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Lieu de travail</label>
+                                        <i-feather name="map-pin" class="fea icon-sm icons"></i-feather>
+                                        <input required="" name="lieuDeTravail" id="lieuDeTravail" formControlName="lieuDeTravail" type="text" class="form-control pl-5"
+                                               placeholder="Le lieu de travail :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('lieuDeTravail')?.dirty) || (applyForm.get('lieuDeTravail')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('lieuDeTravail')?.hasError('required')" class="text-danger">
+                                            Le lieu de travail est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Conditions de rémunération</label>
+                                        <i-feather name="dollar-sign" class="fea icon-sm icons"></i-feather>
+                                        <input  name="remuneration" id="remuneration" type="text" formControlName="remuneration" class="form-control pl-5" placeholder="Les conditions de rémunération :">
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Coordonnées du destinataire des candidatures.</label>
+                                        <i-feather name="mail" class="fea icon-sm icons"></i-feather>
+                                        <input required="" name="coordonneeCandidatures" formControlName="coordonneeCandidatures" id="coordonneeCandidatures" type="text" class="form-control pl-5"
+                                               placeholder="Les coordonnées du destinataire des candidatures :">
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('coordonneeCandidatures')?.dirty) || (applyForm.get('coordonneeCandidatures')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('coordonneeCandidatures')?.hasError('required')" class="text-danger">
+                                            Les coordonnées sont requis
+                                        </small>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group position-relative">
+                                        <label>Descriptif des activités confiées à l’alternant</label>
+                                        <i-feather name="message-circle" class="fea icon-sm icons"></i-feather>
+                                        <textarea required="" name="description" id="description" formControlName="description" rows="4" class="form-control pl-5"
+                                                  placeholder="Le descriptif des activités confiées à l’alternant :"></textarea>
+                                    </div>
+                                    <div *ngIf="(applyForm.invalid && applyForm.get('description')?.dirty) || (applyForm.get('description')?.touched || submitted)" >
+                                        <small *ngIf="applyForm.get('description')?.hasError('required')" class="text-danger">
+                                            La description est requise
+                                        </small>
+                                    </div>
+
+                                </div>                                <div class="col-lg-12">
+                                    <div class="form-group position-relative">
+                                        <label>Compétences nécessaires au poste</label>
+                                        <i-feather name="edit-2" class="fea icon-sm icons"></i-feather>
+                                        <textarea name="competences" required="" formControlName="competences" id="competences" rows="4" class="form-control pl-5"
+                                                  placeholder="Les compétences nécessaires au poste :"></textarea>
+                                    </div>
+                                <div *ngIf="(applyForm.invalid && applyForm.get('competences')?.dirty) || (applyForm.get('competences')?.touched || submitted)" >
+                                    <small *ngIf="applyForm.get('competences')?.hasError('required')" class="text-danger">
+                                        Les compétences sont requises
+                                    </small>
+                                </div>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="submit" id="submit" name="send" class="btn btn-primary" value="Soumettre">
+                                </div>
+                                <!--end col-->
+                            </div>
+                            <!--end row-->
+                        </form>
+                        <!--end form-->
+
+
+<!--
+                        <div class="row">
+                            <div class="col-md-6 mt-4 pt-2">
+                                <h5>Contact Info :</h5>
+
+                                <form>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-12">
+                                            <div class="form-group position-relative">
+                                                <label>Phone No. :</label>
+                                                <i-feather name="phone" class="fea icon-sm icons"></i-feather>
+                                                <input name="number" id="number" type="number" class="form-control pl-5"
+                                                       placeholder="Phone :">
+                                            </div>
+                                        </div>
+                                        &lt;!&ndash;end col&ndash;&gt;
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group position-relative">
+                                                <label>Website :</label>
+                                                <i-feather name="globe" class="fea icon-sm icons"></i-feather>
+                                                <input name="url" id="url" type="url" class="form-control pl-5" placeholder="Url :">
+                                            </div>
+                                        </div>
+                                        &lt;!&ndash;end col&ndash;&gt;
+
+                                        <div class="col-lg-12 mt-2 mb-0">
+                                            <button class="btn btn-primary">Add</button>
+                                        </div>
+                                        &lt;!&ndash;end col&ndash;&gt;
+                                    </div>
+                                    &lt;!&ndash;end row&ndash;&gt;
+                                </form>
+                            </div>
+                            &lt;!&ndash;end col&ndash;&gt;
+
+                            <div class="col-md-6 mt-4 pt-2">
+                                <h5>Change password :</h5>
+                                <form>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-12">
+                                            <div class="form-group position-relative">
+                                                <label>Old password :</label>
+                                                <i-feather name="key" class="fea icon-sm icons"></i-feather>
+                                                <input type="password" class="form-control pl-5" placeholder="Old password" required="">
+                                            </div>
+                                        </div>
+                                        &lt;!&ndash;end col&ndash;&gt;
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group position-relative">
+                                                <label>New password :</label>
+                                                <i-feather name="key" class="fea icon-sm icons"></i-feather>
+                                                <input type="password" class="form-control pl-5" placeholder="New password" required="">
+                                            </div>
+                                        </div>
+                                        &lt;!&ndash;end col&ndash;&gt;
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group position-relative">
+                                                <label>Re-type New password :</label>
+                                                <i-feather name="key" class="fea icon-sm icons"></i-feather>
+                                                <input type="password" class="form-control pl-5" placeholder="Re-type New password"
+                                                       required="">
+                                            </div>
+                                        </div>
+                                        &lt;!&ndash;end col&ndash;&gt;
+
+                                        <div class="col-lg-12 mt-2 mb-0">
+                                            <button class="btn btn-primary">Save password</button>
+                                        </div>
+                                        &lt;!&ndash;end col&ndash;&gt;
+                                    </div>
+                                    &lt;!&ndash;end row&ndash;&gt;
+                                </form>
+                            </div>
+                            &lt;!&ndash;end col&ndash;&gt;
+                        </div>
+-->
+                        <!--end row-->
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- Profile Setting End -->
+
+
+
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-soft-primary back-to-top" id="back-to-top"
+   [ngxScrollTo]="'#home'">
+    <i-feather name="arrow-up" class="icons"></i-feather>
+</a>
+<!-- Back to top -->

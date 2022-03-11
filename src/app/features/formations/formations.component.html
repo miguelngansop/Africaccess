@@ -1,0 +1,175 @@
+<!-- Hero Start -->
+<section class="bg-half d-table w-100" id="home" style="background: url('assets/images/course/bg05.jpg')  center center;">
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="page-next-level">
+                    <h4 class="title text-white title-dark"> Toutes les formations </h4>
+                    <div class="page-next">
+                        <nav aria-label="breadcrumb" class="d-inline-block">
+                            <ul class="breadcrumb bg-white rounded shadow mb-0">
+                                <li class="breadcrumb-item"><a routerLink="/">Africaccess</a></li>
+                                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Formations</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+
+
+
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="title-heading text-center mt-4 mt-md-5 pt-md-5">
+            <div class="alert alert-light alert-pills" role="alert">
+              <span class="badge badge-pill badge-success mr-1">Commencez</span>
+              <span class="content"> Retrouvez la formation de votre choix. <a class="text-primary">Contactez</a> nous.
+                !</span>
+            </div>
+<!--
+            <h1 class="heading mb-3">
+              <ngx-typed-js [strings]="domaines"
+                [shuffle]="true" [typeSpeed]="80" [loop]="true">
+                Nos domaines: <span class="element text-primary typing"></span>
+              </ngx-typed-js>
+            </h1> -->
+            <form [formGroup]="filterForm" class="rounded p-4 mt-4 bg-white">
+              <div class="row text-left">
+                <div class="col-lg-5 col-md-4">
+                  <div class="form-group mb-0">
+                      <select formControlName="selectedCategorie"  class="form-control custom-select">
+                          <option  [value]="-1">Domaine</option>
+                          <option  *ngFor="let c of categories" [value]="c.id">{{c.libelle}}</option>
+                      </select>
+                  </div>
+                </div>
+                <!--end col-->
+  
+                <div class="col-lg-7 col-md-8">
+                  <div class="row align-items-center">
+                    <div class="col-md-4 mt-4 mt-sm-0">
+                      <div class="form-group mb-0">
+                        <select formControlName="selectedNiveau"   class="form-control custom-select">
+
+                          <option [value]="-1">Niveau</option>
+                          <option *ngFor="let n of niveaux" [value]= "n.id">{{n.libelle}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!--end col-->
+  
+                    <div class="col-md-4 mt-4 mt-sm-0">
+                      <div class="form-group mb-0">
+                        <select formControlName="selectedType" class="form-control custom-select">
+                          <option [value]="-1">Type de formation</option>
+                          <option *ngFor="let t of typesDeFormation" [value]="t.value">{{t.viewValue}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!--end col-->
+  
+                    <div class="col-md-4 mt-4 mt-sm-0">
+                      <input type="submit" id="search" (click)="filter()" name="search" class="searchbtn btn btn-primary btn-block p"
+                        value="Filtrer">
+                    </div>
+                    <!--end col-->
+                  </div>
+                  <!--end row-->
+                </div>
+                <!---end col-->
+              </div>
+              <!--end row-->
+            </form>
+          </div>
+        </div>
+        <!--end col-->
+  
+  
+      </div>
+      <!--end row-->
+ 
+
+<section class="section">
+    <div class="container">
+<!--
+        <div class="row">
+            <ul class="col container-filter list-unstyled categories-filter text-center mb-0" id="filter">
+                <li class="list-inline-item"><a class="categories border d-block text-dark rounded active"
+                                                (click)="activeCategory('all')" [ngClass]="{'active': galleryFilter ==='all'}" data-filter="*">Toutes</a></li>
+                <li *ngFor="let categorie of categories" class="list-inline-item"><a class="categories border d-block text-dark rounded"
+                                                (click)="activeCategory(categorie.libelle)" [ngClass]="{'active': galleryFilter === categorie.libelle }"
+                                                data-filter=".{{categorie.libelle}}">{{categorie.libelle}}</a></li>
+               </ul>
+        </div>
+-->
+        <!--end row-->
+
+        <div class="row projects-wrapper" id="list">
+            <div  *ngFor="let formation of formationsFilter" class="col-lg-4 col-md-6 col-12 mt-4 pt-2 business">
+                <div [routerLink]="['/formations', formation.id, 'details']" style="cursor: pointer" class="card blog border-0 work-container work-classic shadow rounded-md overflow-hidden">
+                    <img  src="{{formation.image}}" class="img-fluid  work-image " alt="" >
+                    <div class="card-body">
+                        <div class="content">
+                            <a href="javascript:void(0)" class="badge badge-primary">{{formation.categorie.libelle}}</a>
+                            <h5 class="mt-3"><a  [routerLink]="['/formations', formation.id, 'details']" class="text-dark title">{{formation.libelle}}</a></h5>
+                            <p class="text-muted" [innerHTML]="formation.description.slice(0,65)"></p>
+                            <a href="javascript:void(0)" class="text-primary h6">Voir plus
+                                <i-feather name="arrow-right" class="fea icon-sm"></i-feather>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+
+
+        </div>
+
+        <!--end row-->
+    </div>
+    <div *ngIf="formationsFilter.length==0"align="center">
+        <img src="assets/images/empty.gif" width="45%" >
+        <p class="text-black-50">Aucune formation disposible pour ces critères!</p>
+    </div>
+    <!--end container-->
+
+
+
+</section>
+<!--end section-->
+
+<div class="row">
+    <ul class="col container-filter list-unstyled categories-filter text-center mb-0" id="filter">
+        <li class="list-inline-item"><a class="categories border d-block text-dark rounded active"
+                                        (click)="activeCategory('all')" [ngClass]="{'active': galleryFilter ==='all'}" data-filter="*">Toutes</a></li>
+        <li *ngFor="let categorie of categories" class="list-inline-item"><a class="categories border d-block text-dark rounded"
+                                                                             (click)="activeCategory(categorie.libelle)" [ngClass]="{'active': galleryFilter === categorie.libelle }"
+                                                                             data-filter=".{{categorie.libelle}}">{{categorie.libelle}}</a></li>
+    </ul>
+</div>
+
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-soft-primary back-to-top" id="back-to-top"
+   [ngxScrollTo]="'#home'">
+    <i-feather name="arrow-up" class="icons"></i-feather>
+</a>
+<!-- Back to top -->

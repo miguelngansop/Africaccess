@@ -1,0 +1,276 @@
+<!-- Hero Start -->
+<section class="bg-half bg-light d-table w-100" id="home">
+    <div class="container" *ngIf="formation">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="page-next-level">
+                    <h2> {{formation.libelle}} </h2>
+                    <ul class="list-unstyled mt-4">
+                        <li class="list-inline-item h6 user text-muted mr-2"><i class="mdi mdi-account"></i>Africaccess</li>
+
+                    </ul>
+                    <div class="page-next">
+                        <nav aria-label="breadcrumb" class="d-inline-block">
+                            <ul class="breadcrumb bg-white rounded shadow mb-0">
+                                <li class="breadcrumb-item"><a routerLink="/">Africaccess</a></li>
+                                <li class="breadcrumb-item"><a href="/formations">Formations</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a href="#">{{formation.libelle}}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative" *ngIf="formation">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<!-- Blog STart -->
+<section class="section" *ngIf="formation">
+    <div class="container">
+        <div class="row">
+            <!-- BLog Start -->
+            <div class="col-lg-8 col-md-6">
+                <div class="card blog blog-detail border-0 shadow rounded">
+                    <img [src]="formation.image" class="img-fluid rounded-top" alt="">
+                    <div class="card-body content">
+                        <h6><i class="mdi mdi-select-place text-primary mr-1"></i>
+                            <a href="javscript:void(0)" class="text-primary">Lieu </a>: <a href="javscript:void(0)" class="text-primary">{{formation.lieuDispense}}</a></h6>
+                        <h6><i class="mdi mdi-location-enter text-primary mr-1"></i>
+                            <a href="javscript:void(0)" class="text-primary">Durée </a>: <a href="javscript:void(0)" class="text-primary">{{formation.duree}}</a></h6>
+                        <h6><i class="mdi mdi-tag text-primary mr-1"></i><a href="javscript:void(0)"
+                                                                            class="text-primary">Catégorie</a>, <a href="javscript:void(0)" class="text-primary">{{formation.categorie.libelle}}</a></h6>
+                        <p class="text-muted mt-3" [innerHTML]="formation.description"> </p>
+                        <blockquote class="blockquote mt-3 p-3" *ngFor="let competence of formation.competences">
+                            <p class="text-muted mb-0 font-italic"> {{competence.libelle}} </p>
+                        </blockquote>
+
+                    </div>
+                </div>
+
+
+
+
+<!--
+                <div class="card shadow rounded border-0 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">Contacter nous et obtenez une brochure ou faites vous rappelez:</h5>
+
+                        <form class="mt-3" [formGroup]="contactForm" (ngSubmit)="submit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group position-relative">
+                                        <label>Votre message</label>
+                                        <i-feather name="message-circle" class="fea icon-sm icons"></i-feather>
+                                        <textarea id="message" placeholder="Votre message" formControlName="message" rows="5" name="message" class="form-control pl-5"
+                                                  required=""></textarea>
+                                    </div>
+                                    <div *ngIf="(contactForm.invalid && contactForm.get('message')?.dirty) || (contactForm.get('message')?.touched || submitted)" >
+                                        <small *ngIf="contactForm.get('message')?.hasError('required')" class="text-danger">
+                                            Le message est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                &lt;!&ndash;end col&ndash;&gt;
+
+                                <div class="col-lg-6">
+                                    <div class="form-group position-relative">
+                                        <label>Votre nom <span class="text-danger">*</span></label>
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input id="name" name="name" type="text" placeholder="Votre nom" formControlName="name" class="form-control pl-5" required="">
+                                    </div>
+                                    <div *ngIf="(contactForm.invalid && contactForm.get('name')?.dirty) || (contactForm.get('name')?.touched || submitted)" >
+                                        <small *ngIf="contactForm.get('name')?.hasError('required')" class="text-danger">
+                                            Le nom est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                &lt;!&ndash;end col&ndash;&gt;
+                                <div class="col-lg-6">
+                                    <div class="form-group position-relative">
+                                        <label>Pays <span class="text-danger">*</span></label>
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input id="country" name="name" type="text" placeholder="Pays" formControlName="pays" class="form-control pl-5" required="">
+                                    </div>
+                                    <div *ngIf="(contactForm.invalid && contactForm.get('pays')?.dirty) || (contactForm.get('pays')?.touched || submitted)" >
+                                        <small *ngIf="contactForm.get('pays')?.hasError('required')" class="text-danger">
+                                            Le pays est requis
+                                        </small>
+                                    </div>
+                                </div>
+
+                                &lt;!&ndash;end col&ndash;&gt;
+                                <div class="col-lg-6">
+                                    <div class="form-group position-relative">
+                                        <label>Ville <span class="text-danger">*</span></label>
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input id="city" name="name" type="text" placeholder="Ville" formControlName="ville" class="form-control pl-5" required="">
+                                    </div>
+                                    <div *ngIf="(contactForm.invalid && contactForm.get('ville')?.dirty) || (contactForm.get('ville')?.touched || submitted)" >
+                                        <small *ngIf="contactForm.get('ville')?.hasError('required')" class="text-danger">
+                                            La ville est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                &lt;!&ndash;end col&ndash;&gt;
+                                <div class="col-lg-6">
+                                    <div class="form-group position-relative">
+                                        <label>Téléphone <span class="text-danger">*</span></label>
+                                        <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                        <input id="phone" name="name" type="text" placeholder="Téléphone" formControlName="telephone" class="form-control pl-5" required="">
+                                    </div>
+                                    <div *ngIf="(contactForm.invalid && contactForm.get('telephone')?.dirty) || (contactForm.get('telephone')?.touched || submitted)" >
+                                        <small *ngIf="contactForm.get('telephone')?.hasError('required')" class="text-danger">
+                                            Le télephone est requis
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group position-relative">
+                                        <label>Votre adresse Email <span class="text-danger">*</span></label>
+                                        <i-feather name="mail" class="fea icon-sm icons"></i-feather>
+                                        <input id="email" type="email" placeholder="Votre adresse email" formControlName="email" name="email" class="form-control pl-5"
+                                               required="">
+                                    </div>
+                                    <div *ngIf="(contactForm.invalid && contactForm.get('email')?.dirty) || (contactForm.get('email')?.touched || submitted)" >
+                                        <small *ngIf="contactForm.get('email')?.hasError('required')" class="text-danger">
+                                            L'adresse email est requise
+                                        </small>
+                                    </div>
+                                </div>
+                                &lt;!&ndash;end col&ndash;&gt;
+
+                                <div class="col-md-12" *ngIf="!send">
+                                    <div class="send">
+                                        <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mb-0 pb-0" *ngIf="send">
+                                    <div class="row justify-content-center">
+                                        <img src="assets/images/loading.gif" class="img-fluid" width="150" height="150" alt="loading">
+                                    </div>
+                                </div>
+                                &lt;!&ndash;end col&ndash;&gt;
+                            </div>
+                            &lt;!&ndash;end row&ndash;&gt;
+                        </form>
+                        &lt;!&ndash;end form&ndash;&gt;
+                    </div>
+                </div>
+-->
+
+                <div class="send">
+                    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/africaccess/reservez-un-rendez-vous'});return false;" type="submit" class="btn btn-primary btn-block">
+                        Planifier un rendez-vous
+                    </button>
+                </div>
+
+                <div class="card shadow rounded border-0 mt-4" *ngIf="relatedFormations.length>0">
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">Formations similaire  :</h5>
+
+                        <div class="row">
+                            <div class="col-lg-6 mt-4 pt-2" *ngFor="let f of relatedFormations">
+                                <div class="card blog rounded border-0 shadow" (click)="initial(f.id)"   >
+                                    <div class="position-relative">
+                                        <img [src]="f.image" class="card-img-top rounded-top" alt="...">
+                                        <div class="overlay rounded-top bg-dark">{{f.categorie.libelle}}</div>
+                                    </div>
+                                    <div class="card-body content"  >
+                                        <h5><a href="javascript:void(0)" class="card-title title text-dark">
+                                            {{f.libelle}}
+                                        </a></h5>
+                                        <div class="post-meta d-flex justify-content-between mt-3">
+
+                                        </div>
+                                    </div>
+                                    <div class="author">
+                                        <small class="text-light user d-block"><i class="mdi mdi-account"></i> Africaccess </small>
+                                        <small class="text-light date"><i class="mdi mdi-calendar-check"></i> {{f.duree}} </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                </div>
+
+            </div>
+            <!-- BLog End -->
+
+            <!-- START SIDEBAR -->
+            <div class="col-lg-4 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <div class="card border-0 sidebar sticky-bar rounded shadow">
+                    <div class="card-body">
+                        <!-- SOCIAL -->
+                        <div class="widget">
+                            <h4 class="widget-title">Suivez nous sur: </h4>
+                            <h6 *ngIf="formation.rythme"><i class="mdi mdi-tag text-primary mr-1"></i>
+                                <a href="javscript:void(0)" class="text-primary">Rythme </a>, <a href="javscript:void(0)" class="text-primary">{{formation.rythme}}</a></h6>
+                            <ul class="list-unstyled social-icon mb-0 mt-4">
+                                <li class="list-inline-item"><a href="javascript:void(0)" class="rounded">
+                                    <i-feather name="facebook" class="fea icon-sm fea-social"></i-feather>
+                                </a></li>
+                                <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                    <i-feather name="instagram" class="fea icon-sm fea-social"></i-feather>
+                                </a></li>
+                                <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                    <i-feather name="twitter" class="fea icon-sm fea-social"></i-feather>
+                                </a></li>
+                                <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                    <i-feather name="linkedin" class="fea icon-sm fea-social"></i-feather>
+                                </a></li>
+                                <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded">
+                                    <i-feather name="youtube" class="fea icon-sm fea-social"></i-feather>
+                                </a></li>
+
+                            </ul>
+                            <!--end icon-->
+                        </div>
+                        <!-- SOCIAL -->
+
+                        <!-- CATAGORIES -->
+                        <div class="widget mb-4 pb-2" >
+                            <h4 class="widget-title">Catagories de formations</h4>
+                            <ul class="list-unstyled mt-4 mb-0 blog-catagories">
+                                <li *ngFor="let c of categories"><a href="javascript:void(0)" >{{c.libelle}}</a> </li>
+                            </ul>
+                        </div>
+                        <!-- CATAGORIES -->
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+            <!-- END SIDEBAR -->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+
+<!--end section-->
+<!-- Blog End -->
+
+
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-soft-primary back-to-top" id="back-to-top"
+   [ngxScrollTo]="'#home'">
+    <i-feather name="arrow-up" class="icons"></i-feather>
+</a>
+<!-- Back to top -->

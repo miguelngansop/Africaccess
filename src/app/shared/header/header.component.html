@@ -1,0 +1,178 @@
+<!-- Navbar STart -->
+<header id="topnav" class="defaultscroll sticky" (window:scroll)="windowScroll()" [class]="navClass">
+  <div class="container">
+    <!-- Logo container-->
+    <div>
+      <a class="logo" routerLink="/" *ngIf="navClass !== 'nav-light'">
+        <img src="assets/images/logo-dark.png" class="l-dark" height="40" alt="">
+        <img src="assets/images/logo-dark.png" class="l-light" height="40" alt="">
+      </a>
+      <a class="logo" routerLink="/" *ngIf="navClass === 'nav-light'">
+        <img src="assets/images/logo-dark.png" class="l-dark" height="40" alt="">
+        <img src="assets/images/logo-light.png" class="l-light" height="40" alt="">
+      </a>
+    </div>
+    <div class="buy-button" *ngIf="!auth && wait">
+      <ng-template [ngIf]="navClass === 'nav-light'">
+        <a href="javascript: void(0);" class="btn btn-primary login-btn-primary" routerLink="/auth-login">
+          <i class="mdi mdi-login"></i>
+          Se connecter
+        </a>
+          <a href="javascript: void(0);" class="btn btn-light login-btn-light" routerLink="/auth-login">
+            <i class="mdi mdi-login"></i>
+            Se connecter
+          </a>
+      </ng-template>
+      <ng-template [ngIf]="navClass !== 'nav-light'">
+          <a href="javascript: void(0);" class="btn btn-primary" routerLink="/auth-login" >
+            <i class="mdi mdi-login"></i>
+            Se connecter
+          </a>
+<!--
+        <a href="javascript: void(0);" class="btn btn-light login-btn-light">Se connecter</a>
+-->
+
+      </ng-template>
+
+    </div>
+
+
+    <div class="buy-button" *ngIf="!auth && wait">
+      <!-- <ng-template [ngIf]="navClass === 'nav-light'">
+        <a href="javascript: void(0);" class="btn btn-primary login-btn-primary" routerLink="/auth-signup">
+          <i class="mdi mdi-account"></i>
+          S'inscrire</a>
+        <a href="javascript: void(0);" class="btn btn-light login-btn-light" routerLink="/auth-signup">
+          <i class="mdi mdi-account"></i>
+          S'inscrire
+        </a>
+      </ng-template> -->
+      <!-- <ng-template [ngIf]="navClass !== 'nav-light'">
+        <a href="javascript: void(0);" class="btn btn-primary" routerLink="/auth-signup" >
+          <i class="mdi mdi-account"></i>
+          S'inscrire
+        </a>
+      </ng-template> -->
+
+    </div>
+
+
+    <!--end login button-->
+    <!-- End Logo container-->
+    <div class="menu-extras">
+      <div class="menu-item">
+        <!-- Mobile menu toggle-->
+        <a class="navbar-toggle" (click)="toggleMenu()" [ngClass]="{'open': isCondensed === true}">
+          <div class="lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+
+        <!-- End mobile menu toggle-->
+      </div>
+    </div>
+
+    <div id="navigation">
+      <!-- Navigation Menu-->
+      <ul class="navigation-menu" [class]="navClass">
+<!--        <li class="has-submenu">
+          <a href="javascript:void(0)" (click)="onMenuClick($event)">A propos</a><span class="menu-arrow"></span>
+          <ul class="submenu">
+            <li><a class="nav-link-ref" (click)="toggleMenu()" routerLink="/presentation">Présentation </a>
+            </li>
+            <li><a class="nav-link-ref" (click)="toggleMenu()" routerLink="/services">Services</a></li>
+          </ul>
+        </li>-->
+        <li><a class="nav-link-ref" (click)="toggleMenu()" routerLink="/presentation">A propos </a>
+        <li class="has-submenu">
+          <a href="javascript:void(0)" (click)="onMenuClick($event)">Nos services</a><span class="menu-arrow"></span>
+          <ul class="submenu">
+            <li><a routerLink="/offres-en-alternance" class="nav-link-ref" (click)="toggleMenu()">Offres d'alternance</a></li>
+            <li><a class="nav-link-ref" (click)="toggleMenu()" routerLink="/equivalence-de-diplome">Equivalences</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/formations" class="nav-link-ref" (click)="toggleMenu()">Formations</a></li>
+
+<!--
+        <li class="has-submenu">
+          <a href="javascript:void(0)" (click)="onMenuClick($event)">Formations</a><span class="menu-arrow"></span>
+          <ul class="submenu">
+            <li><a routerLink="/formations" class="nav-link-ref" (click)="toggleMenu()">Toutes les formations</a></li>
+            <li><a routerLink="/formations/certifiantes" class="nav-link-ref" (click)="toggleMenu()">Formations certifiantes</a></li>
+            <li><a class="nav-link-ref" (click)="toggleMenu()" routerLink="/formations/qualifiantes">Formations qualifiantes</a></li>
+          </ul>
+        </li>-->
+<!--
+        <li><a routerLink="/offres-en-alternance" class="nav-link-ref" (click)="toggleMenu()">Offres d'alternance</a></li>
+-->
+<!--
+        <li><a class="nav-link-ref" (click)="toggleMenu()" routerLink="/equivalence-de-diplome">Equivalences</a></li>
+-->
+
+
+        <li><a routerLink="/contact" class="nav-link-ref" (click)="toggleMenu()">Contact</a></li>
+
+        <li class="has-submenu " hidden  *ngIf="auth && wait" >
+          <a href="javascript:void(0)" (click)="onMenuClick($event)"><img [src]="user.profilePicture || 'assets/images/userdefaut.png'" class="img-fluid avatar avatar-ex-sm rounded-circle mr-1 ">{{ user.name }}</a><span class="menu-arrow"></span>
+          <ul class="submenu">
+            <li><a *ngIf="isEntreprise"  class="nav-link-ref" href="/espace-personnel" (click)="toggleMenu()">Espace Entreprise</a></li>
+<!--
+            <li><a class="nav-link-ref" >Mes demandes</a></li>
+-->
+            <li><a class="nav-link-ref" href="javascrip:void()" (click)="logout()">Déconnexion</a></li>
+          </ul>
+        </li>
+
+
+        <div *ngIf="auth && wait" class="buy-button" style="line-height: 20px;">
+          <li class="has-submenu">
+          <ul class="navigation-menu" [class]="navClass">
+            <li class="has-submenu">
+              <a href="javascript:void(0)" (click)="onMenuClick($event)" class="text-capitalize">
+                <img [src]="user.profilePicture || 'assets/images/userdefaut.png'" class="img-fluid avatar avatar-ex-sm rounded-circle mr-1 ">{{ user?.name }}
+              </a><span class="menu-arrow"></span>
+              <ul class="submenu">
+                <li><a *ngIf="isEntreprise" class="nav-link-ref" href="/espace-personnel" (click)="toggleMenu()">Espace entreprise</a></li>
+<!--
+                <li><a class="nav-link-ref" >Mes demandes</a></li>
+-->
+                <li><a class="nav-link-ref" href="javascrip:void()" (click)="logout()">Déconnexion</a></li>
+              </ul>
+            </li>
+          </ul>
+          </li>
+        </div>
+
+
+
+
+
+
+      </ul>
+      <!--end navigation menu-->
+
+
+
+      <div class="buy-menu-btn d-none "  *ngIf="!auth && wait"   >
+        <!-- <a href="javascript: void(0);" style="font-size: 13px; margin: 7px;" class="btn btn-primary login-btn-primary" routerLink="/auth-signup">
+          <i class="mdi mdi-account"></i>
+          S'inscrire
+        </a> -->
+
+        <a href="javascript: void(0);" style="font-size: 13px" class="btn btn-primary login-btn-primary" routerLink="/auth-login">
+          <i class="mdi mdi-login"></i>
+          Se connecter
+        </a>
+
+      </div>
+      <!--end login button-->
+      <!--end login button-->
+    </div>
+    <!--end navigation-->
+  </div>
+  <!--end container-->
+</header>
+<!--end header-->
+<!-- Navbar End -->
